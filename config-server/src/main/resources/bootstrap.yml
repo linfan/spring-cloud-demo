@@ -5,8 +5,8 @@ spring:
     config:
       server:
         git:
-          uri: ${config.repo.uri:https://github.com/luoml/spring-cloud-example}
+          uri: https://github.com/linfan/spring-cloud-demo.git
           searchPaths: config-repo
-    
+
 server:
   port: 8888
