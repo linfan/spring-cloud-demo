@@ -11,9 +11,10 @@
 	<url>http://maven.apache.org</url>
 
 	<modules>
-		<module>config-server</module>
 		<module>eureka-server</module>
 		<module>eureka-client</module>
+		<module>ribbon-demo</module>
+		<module>config-server</module>
 		<module>rest-demo</module>
 		<module>feign-demo</module>
 		<module>api-gateway</module>
