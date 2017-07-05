@@ -3,7 +3,7 @@
 
 Spring Cloud相关DEMO，包含zuul\eureka\swagger2\feign\hystrix\spring cloud config\spring data rest等。  
 
-GitHub：<https://github.com/linfan/spring-cloud-demo.git>
+GitHub：<https://github.com/linfan/spring-cloud-demo.git> <br>
 Forked from：<https://github.com/luoml/spring-cloud-example.git>  
 
 
@@ -21,8 +21,14 @@ _项目基于Spring Boot `1.5.4.RELEASE`和Spring Cloud `Dalston.RELEASE`版本�
 |[admin-server](admin-server/README.md)|监控基于Spring Boot的应用|  
 |...|...|  
 
-> 项目启动顺序：  
-> 1. 服务端（config-server \ eureka-server \ admin-server）  
-> 2. 客户端（eureka-client \ feign-demo \ rest-demo）  
-> 3. 服务网关（api-gateway）  
-
+> 演示目录：
+> 1. 服务发现，通过服务发现进行服务调用负载均衡 <br>
+涉及项目`eureka-server`/`eureka-client`/`ribbon-demo`
+> 2. 配置中心，通过配置中心进行配置热刷新 <br>
+涉及项目`config-server`/`config-client`/`config-repo`
+> 3. 故障熔断，通过故障熔断阻止故障雪崩 <br>
+涉及项目`eureka-server`/`eureka-client`/`feign-demo`
+> 4. 服务监控，通过性能面板和调用链追踪优化服务 <br>
+涉及项目`admin-server`/`hystrix-dashboard`/`sleuth-server`
+> 5. 服务网关，通过服务网关控制访问流量 <br>
+涉及项目`eureka-server`/`eureka-client`/`api-gateway`
