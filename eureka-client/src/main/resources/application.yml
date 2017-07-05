@@ -28,6 +28,3 @@ endpoints:
   heapdump:
     enabled: true
     sensitive: false
-
-demo:
-  env: local

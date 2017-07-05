@@ -1,0 +1,5 @@
+server:
+  port: 8081
+
+demo:
+  env: local-1
