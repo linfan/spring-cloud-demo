@@ -1,1 +1,2 @@
-demo.env=dev
+demo:
+  env: dev

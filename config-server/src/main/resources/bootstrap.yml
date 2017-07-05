@@ -1,12 +1,6 @@
 spring:
   application:
-    name: config-server 
-  cloud:
-    config:
-      server:
-        git:
-          uri: https://github.com/linfan/spring-cloud-demo.git
-          searchPaths: config-repo
+    name: config-server
 
 server:
   port: 8888
