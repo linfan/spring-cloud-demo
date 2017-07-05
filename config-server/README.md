@@ -1,13 +1,20 @@
-# config-server  
+# config-server
+
 本模块主要演示Spring Cloud Config Server。  
-ConfigServer用于管理Git或SVN配置，当其收到来自客户端的配置获取请求后，会将远程仓库的配置clone到本地的临时目录，然后从本地读取配置并返回。  
+
+ConfigServer使用Git或SVN仓库管理配置，当其收到来自客户端的配置获取请求后，会将远程仓库的配置clone到本地的临时目录，然后从本地读取配置并返回。  
 
 |url|desc|  
 |:---|:---|   
-|http://localhost:8888/{application}/{profile}[/{label}]|配置访问地址（变量含义见config-repo说明）|  
-|http://localhost:8888/eureka-client/dev|获取eureka-client服务的dev环境配置|   
+|http://localhost:8888/{application}/{profile}[/{label*}]|配置访问地址|  
+|http://localhost:8888/config-client.yml|获得config-client服务默认profile的原始配置|
+|http://localhost:8888/config-client/default|获得config-client服务默认profile的配置内容|
+|http://localhost:8888/config-client-dev.yml|获得config-client服务dev profile的原始配置|
+|http://localhost:8888/config-client/dev|获得config-client服务dev profile的配置内容|
 
-* 引入Maven依赖
+> *lable指的是Git仓库的分支或标签
+
+- 引入Maven依赖
 
 ``` maven
 <dependency>
@@ -16,7 +23,7 @@ ConfigServer用于管理Git或SVN配置，当其收到来自客户端的配置�
 </dependency>
 ```
 
-* 配置仓库地址
+- 配置仓库地址
 
 _spring.cloud.config.server.git.uri配置git仓库地址，集中管理服务配置信息_  
 _searchPaths指定扫描路径_
@@ -29,14 +36,14 @@ spring:
     config:
       server:
         git:
-          uri: ${config.repo.uri:https://github.com/luoml/spring-cloud-example}
+          uri: ${config.repo.uri:https://github.com/linfan/spring-cloud-demo}
           searchPaths: config-repo
-    
+
 server:
   port: 8888
 ```
 
-* 启用ConfigServer
+- 启用ConfigServer
 
 _增加@EnableConfigServer，启用Config Server_  
 
@@ -49,12 +56,3 @@ public class ConfigServerApplication {
 	}
 }
 ```
-
-## 运行截图
-* eureka-client dev配置  
-
-![Spring Data REST](../_images/config-server/dev.jpg)    
-
-* eureka-client 默认配置  
-
-![the HAL Browser](../_images/config-server/default.jpg)  

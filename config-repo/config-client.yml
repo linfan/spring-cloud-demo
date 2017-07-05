@@ -1,10 +1,7 @@
 server:
   port: 8085
 
-spring:
-  profiles:
-    active: dev
-
+# Enable eureka register
 eureka:
   instance:
     leaseRenewalIntervalInSeconds: 10

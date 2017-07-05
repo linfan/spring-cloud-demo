@@ -1,0 +1,5 @@
+# Enable endpoints should be put in local application.yml
+endpoints:
+  env:
+    enabled: true
+    sensitive: false
