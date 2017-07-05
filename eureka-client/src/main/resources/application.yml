@@ -1,0 +1,33 @@
+# eureka.instance.leaseRenewalIntervalInSeconds 心跳间隔（秒），默认30s
+# eureka.instance.leaseExpirationDurationInSeconds　失效时间，默认90s
+# 如果服务在指定的 失效时间 内仍没有发起心跳请求，将会被剔除EurekaServer
+eureka:
+  instance:
+    leaseRenewalIntervalInSeconds: 10
+    leaseExpirationDurationInSeconds: 30
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+    healthcheck:
+      enabled: true
+
+# Enable admin endpoints
+endpoints:
+  metrics:
+    enabled: true
+    sensitive: false
+  dump:
+    enabled: true
+    sensitive: false
+  env:
+    enabled: true
+    sensitive: false
+  trace:
+    enabled: true
+    sensitive: false
+  heapdump:
+    enabled: true
+    sensitive: false
+
+demo:
+  env: local

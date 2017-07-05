@@ -1,0 +1,18 @@
+# eureka.client.registerWithEureka 不注册自己到Eureka服务中心
+# eureka.client.fetchRegistry 从Eureka服务中心获取注册信息
+# eureka.client.serviceUrl.defaultZone 设置Eureka服务中心地址
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+
+# 打印日志
+# logging.file 将日志打印到指定文件
+logging:
+#  file: logs/eureka-server.log
+  level:
+    ROOT: INFO

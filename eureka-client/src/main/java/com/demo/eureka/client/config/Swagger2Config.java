@@ -33,7 +33,7 @@ public class Swagger2Config {
 
 	private ApiInfo apiInfo() {
 		return new ApiInfoBuilder()
-				.title("Swagger2 测试")
+				.title("Swagger2 API 演试")
 				.description("")
 				.version("1.0")
 				.termsOfServiceUrl("")
