@@ -32,7 +32,7 @@ public class Swagger2Config {
 
 	private ApiInfo apiInfo() {
 		return new ApiInfoBuilder()
-				.title("Swagger2 API 演试")
+				.title("Ribbon Client 演示")
 				.description("")
 				.version("1.0")
 				.termsOfServiceUrl("")

@@ -17,6 +17,7 @@ import springfox.documentation.annotations.ApiIgnore;
 @RestController
 @RequestMapping(value="/api")
 public class DemoController {
+
 	@Autowired
     private EurekaRegistration registration;
 	
