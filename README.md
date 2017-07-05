@@ -7,7 +7,7 @@ GitHub：<https://github.com/linfan/spring-cloud-demo.git>
 Forked from：<https://github.com/luoml/spring-cloud-example.git>  
 
 
-_项目基于Spring Boot `1.5.3.RELEASE`和Spring Cloud `Dalston.RELEASE`版本，各模块简要说明如下：_
+_项目基于Spring Boot `1.5.4.RELEASE`和Spring Cloud `Dalston.RELEASE`版本，各模块简要说明如下：_
 
 |project|desc|
 |---|---|  
