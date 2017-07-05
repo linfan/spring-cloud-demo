@@ -1,0 +1,16 @@
+server:
+  port: 8085
+
+spring:
+  profiles:
+    active: dev
+
+eureka:
+  instance:
+    leaseRenewalIntervalInSeconds: 10
+    leaseExpirationDurationInSeconds: 30
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+    healthcheck:
+      enabled: true
