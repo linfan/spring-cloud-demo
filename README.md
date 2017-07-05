@@ -1,16 +1,15 @@
 
-## Spring Cloud Example  
-
-[![Build Status](https://travis-ci.org/luoml/spring-cloud-example.png?branch=master)](https://travis-ci.org/luoml/spring-cloud-example)
+## Spring Cloud Demo  
 
 Spring Cloud相关DEMO，包含zuul\eureka\swagger2\feign\hystrix\spring cloud config\spring data rest等。  
 
-GitHub：<https://github.com/luoml/spring-cloud-example.git>  
+GitHub：<https://github.com/linfan/spring-cloud-demo.git>
+Forked from：<https://github.com/luoml/spring-cloud-example.git>  
 
 
-_项目基于Spring Boot 1.5.2.RELEASE，Spring Cloud Dalston.RELEASE，各模块简要说明如下：_  
+_项目基于Spring Boot `1.5.3.RELEASE`和Spring Cloud `Dalston.RELEASE`版本，各模块简要说明如下：_
 
-|project|desc|  
+|project|desc|
 |---|---|  
 |[config-repo](config-repo/README.md)|Git远程仓库|  
 |[config-server](config-server/README.md)|Spring Cloud Config Server，从config-repo拉取配置清单|  
@@ -26,5 +25,4 @@ _项目基于Spring Boot 1.5.2.RELEASE，Spring Cloud Dalston.RELEASE，各模�
 > 1. 服务端（config-server \ eureka-server \ admin-server）  
 > 2. 客户端（eureka-client \ feign-demo \ rest-demo）  
 > 3. 服务网关（api-gateway）  
-
 
