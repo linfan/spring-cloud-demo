@@ -27,8 +27,8 @@ public class DemoController {
 		return user.getGreeting() + " " + user.getName() + "!";
 	}
 
-	@RequestMapping(value = "/info", method = RequestMethod.GET)
-	public String info() {
+	@RequestMapping(value = "/backend", method = RequestMethod.GET)
+	public String backend() {
 		Info info = demoRibbonRestClient.getInfo();
 		return "Called " + info.getName() + "(" + info.getEnv() + ") @ " + info.getAddress();
 	}

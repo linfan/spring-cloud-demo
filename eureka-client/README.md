@@ -55,11 +55,11 @@ public class EurekaClientApplication {
 ## 启动Eureka Client  
 
 ```bash
-mvn spring-boot:run -Dspring.profiles.enable=lo1
-mvn spring-boot:run -Dspring.profiles.enable=lo2
+mvn spring-boot:run -Dspring.profiles.active=lo1
+mvn spring-boot:run -Dspring.profiles.active=lo2
 ```
 
 ```bash
-java -jar target/eureka-client-1.0.0-SNAPSHOT.jar --spring.profiles.enable=lo1
-java -jar target/eureka-client-1.0.0-SNAPSHOT.jar --spring.profiles.enable=lo2
+java -jar target/eureka-client-1.0.0-SNAPSHOT.jar --spring.profiles.active=lo1
+java -jar target/eureka-client-1.0.0-SNAPSHOT.jar --spring.profiles.active=lo2
 ```
