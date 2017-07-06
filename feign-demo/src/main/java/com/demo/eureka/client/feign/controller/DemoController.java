@@ -10,18 +10,29 @@ import com.demo.eureka.client.feign.service.demo.DemoServiceFeignClient;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
 
+import java.security.InvalidParameterException;
+
 @RestController
 public class DemoController {
 	
 	@Autowired
 	private DemoServiceFeignClient demoServiceFeignClient;
-	
+
 	@RequestMapping(value = "/call", method = RequestMethod.GET)
-	public String info() {
+	public String call() {
 	    User mike = demoServiceFeignClient.greeting("hi", new User("hey", "mike"));
 	    User lucy = demoServiceFeignClient.hello("Lucy");
 		return "when i say \"hey\" to " + mike.getName() + " and he answered me \"" + mike.getGreeting()
             + "\". then i call " + lucy.getName() + " and she say \"" + lucy.getGreeting() + "\".";
 	}
 
+    @RequestMapping(value = "/fail", method = RequestMethod.GET)
+    @HystrixCommand(fallbackMethod = "fail_fallback")
+    public String fail() {
+	    throw new InvalidParameterException("always failing");
+    }
+
+    public String fail_fallback() {
+	    return "this is the fallback function";
+    }
 }
