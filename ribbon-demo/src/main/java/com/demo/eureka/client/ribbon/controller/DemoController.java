@@ -15,16 +15,12 @@ public class DemoController {
 	@Autowired
     DemoRibbonRestClient demoRibbonRestClient;
 
-	@RequestMapping(value = "/get", method = RequestMethod.GET)
-	public String tryGet() {
-		User user = demoRibbonRestClient.getUser("demo");
-		return user.getGreeting() + " " + user.getName() + "!";
-	}
-
-	@RequestMapping(value = "/post", method = RequestMethod.GET)
-	public String tryPost() {
-		User user = demoRibbonRestClient.postUser("hi", "demo");
-		return user.getGreeting() + " " + user.getName() + "!";
+	@RequestMapping(value = "/call", method = RequestMethod.GET)
+	public String call() {
+		User mike = demoRibbonRestClient.postUser("hey", "mike", "hi");
+		User lucy = demoRibbonRestClient.getUser("Lucy");
+		return "when i say \"hey\" to " + mike.getName() + " and he answered me \"" + mike.getGreeting()
+				+ "\". then i call " + lucy.getName() + " and she say \"" + lucy.getGreeting() + "\".";
 	}
 
 	@RequestMapping(value = "/backend", method = RequestMethod.GET)

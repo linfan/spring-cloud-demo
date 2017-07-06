@@ -16,8 +16,7 @@ public interface DemoServiceFeignClient {
     public User hello(@PathVariable("name") String name);
 
     @RequestMapping(value = "/api/{greeting}", method = RequestMethod.POST)
-    public User greeting(@PathVariable("greeting") String greeting,
-                           @RequestBody User user);
+    public User greeting(@PathVariable("greeting") String greeting, @RequestBody User user);
 
     @RequestMapping(value = "/api/info", method = RequestMethod.GET)
     public Info info();

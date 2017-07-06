@@ -22,6 +22,12 @@
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-ribbon</artifactId>
 		</dependency>
+
+		<!-- hystrix -->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-hystrix</artifactId>
+		</dependency>
 	</dependencies>
 
 </project>

@@ -19,6 +19,6 @@ public class DemoServiceFeignClientFallback implements DemoServiceFeignClient {
 
 	@Override
 	public Info info() {
-		return null;
+		return new Info("none", "default", "no where");
 	}
 }
