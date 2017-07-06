@@ -17,7 +17,7 @@
 		<module>config-server</module>
         <module>config-client</module>
 		<module>feign-demo</module>
-        <module>admin-server</module>
+        <module>admin-demo</module>
         <module>turbine-demo</module>
 		<module>api-gateway</module>
         <module>rest-demo</module>
