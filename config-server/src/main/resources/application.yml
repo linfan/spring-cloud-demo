@@ -8,6 +8,13 @@ spring:
         git:
           uri: https://github.com/linfan/spring-cloud-demo.git  # or /local/path/to/spring-cloud-demo/.git
           searchPaths: config-repo
+  rabbitmq:
+    host: localhost
+    port: 5672
+
+management:
+  security:
+    enabled: false
 
 # Enable mappings endpoints
 endpoints:

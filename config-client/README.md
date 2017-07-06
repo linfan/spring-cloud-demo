@@ -47,4 +47,8 @@ _通过@Value("${属性名}")获取属性值，见DemoController类hello()_
 @Value("${demo.env}")
 private String env;
 ```
-  
+
+
+直接调用`/refresh`刷新单个服务配置??
+
+调用`/bus/refresh`刷新所有配置
