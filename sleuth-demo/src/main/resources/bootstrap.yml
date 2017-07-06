@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: sleuth
+server:
+  port: 9966
