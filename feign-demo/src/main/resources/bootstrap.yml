@@ -6,7 +6,7 @@ spring:
       uri: ${config.server.uri:http://localhost:8888}   
 
 server:
-  port: 8181
+  port: 8182
 
 eureka:
   instance:

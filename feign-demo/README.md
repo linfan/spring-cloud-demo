@@ -5,25 +5,15 @@ _FeignClient方式调用接口_
 
 |url|desc|  
 |:---|:---|  
-|http://localhost:8181/hello|输出hello信息 [eureka-client]|  
-|http://localhost:8181/user-feign/1|根据ID获取User [db-rest]|  
-|http://localhost:8181/user-feign/getUserByName/张三|根据name获取User [db-rest]|  
-|http://localhost:8181/user-feign/getUserByAddress/test|根据地址获取User [db-rest]|  
-
-
-_RestTemplate方式调用接口_   
-
-|url|desc|  
-|:---|:---|  
-|http://localhost:8181/user-rest/1|根据ID获取User [db-rest]|  
+|http://localhost:8182/call|输出hello信息 [eureka-client]|  
 
 
 _Hystrix Dashboard监控_  
 
 |url|desc|  
 |:---|:---|    
-|http://localhost:8181/hystrix|查看仪表盘|  
-|http://localhost:8181/hystrix.stream|在仪表盘中增加监控|  
+|http://localhost:8182/hystrix|查看仪表盘|
+|http://localhost:8182/hystrix.stream|在仪表盘中增加监控|  
 
 ## 配置FeignClient
 
@@ -168,7 +158,7 @@ public class EurekaClientFeignApplication {
 
 ![](../_images/feign-demo/hystrix.jpg)  
 
-_输入监控地址：http://localhost:8181/hystrix.stream_  
+_输入监控地址：http://localhost:8182/hystrix.stream_  
 _点击Monitor Stream，进入监控界面_  
 _当访问相关接口时，Hystrix仪表板将会显示每个断路器的健康情况。_
 

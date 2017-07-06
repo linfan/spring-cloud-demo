@@ -1,43 +1,37 @@
 package com.demo.eureka.client.feign.vo;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+
+@ApiModel("用户信息")
 public class User {
-	
-	private Integer id;
-	
+
+	@ApiModelProperty("打招呼的方式")
+	private String greeting;
+	@ApiModelProperty("名字")
 	private String name;
-	private String address;
-	
-	public User() {
-		super();
+
+    public User() {
+    }
+
+    public User(String greeting, String name) {
+        this.greeting = greeting;
+        this.name = name;
+    }
+
+    public String getGreeting() {
+		return greeting;
 	}
 
-	public User(String name, String address) {
-		super();
-		this.name = name;
-		this.address = address;
+	public void setGreeting(String greeting) {
+		this.greeting = greeting;
 	}
 
-	public Integer getId() {
-		return id;
-	}
-	public void setId(Integer id) {
-		this.id = id;
-	}
 	public String getName() {
 		return name;
 	}
+
 	public void setName(String name) {
 		this.name = name;
-	}
-	public String getAddress() {
-		return address;
-	}
-	public void setAddress(String address) {
-		this.address = address;
-	}
-
-	@Override
-	public String toString() {
-		return "User [id=" + id + ", name=" + name + ", address=" + address + "]";
 	}
 }
