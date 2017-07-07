@@ -32,5 +32,10 @@ endpoints:
     enabled: true
     sensitive: false
 
+# Zipkin
+spring:
+  zipkin:
+    base-url: http://localhost:9966
+
 demo:
   env: local-0

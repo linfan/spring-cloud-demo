@@ -20,3 +20,8 @@ endpoints:
 feign:
   hystrix:
     enabled: true
+
+# Zipkin
+spring:
+  zipkin:
+    base-url: http://localhost:9966
