@@ -8,7 +8,7 @@
 	    <artifactId>springcloud-demo-parent</artifactId>
 	    <version>1.0.0-SNAPSHOT</version>
 	</parent>
-	<artifactId>api-gateway</artifactId>
+	<artifactId>zuul-demo</artifactId>
 
 	<dependencies>
 		<!-- eureka client -->

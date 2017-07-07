@@ -1,6 +1,6 @@
-package com.demo.zuul.api.gateway.config;
+package com.demo.zuul.config;
 
-import com.demo.zuul.api.gateway.filter.AccessFilter;
+import com.demo.zuul.filter.AccessFilter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 

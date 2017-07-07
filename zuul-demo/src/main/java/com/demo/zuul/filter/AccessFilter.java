@@ -1,4 +1,4 @@
-package com.demo.zuul.api.gateway.filter;
+package com.demo.zuul.filter;
 
 import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.context.RequestContext;

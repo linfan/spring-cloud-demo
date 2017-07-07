@@ -20,7 +20,7 @@
         <module>admin-demo</module>
         <module>turbine-demo</module>
         <module>zipkin-demo</module>
-		<module>api-gateway</module>
+		<module>zuul-demo</module>
         <module>db-rest-demo</module>
 	</modules>
 
