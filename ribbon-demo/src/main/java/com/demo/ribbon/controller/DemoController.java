@@ -19,7 +19,7 @@ public class DemoController {
 	public String call() {
 		User mike = demoRibbonRestClient.postUser("hey", "mike", "hi");
 		User lucy = demoRibbonRestClient.getUser("Lucy");
-		return "when i say \"hey\" to " + mike.getName() + " and he answered me \"" + mike.getGreeting()
+		return "when i say \"hi\" to " + mike.getName() + " and he answered me \"" + mike.getGreeting()
 				+ "\". then i call " + lucy.getName() + " and she say \"" + lucy.getGreeting() + "\".";
 	}
 
