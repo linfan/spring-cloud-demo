@@ -1,0 +1,36 @@
+spring:
+  data:
+    rest:
+      basePath: /api
+  datasource:
+    driverClassName: org.h2.Driver
+    # [save to memory]
+    # spring.datasource.url = jdbc:h2:mem:test;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    # [save to file (absolute path / relative path)]
+    # spring.datasource.url = jdbc:h2:file:E:\\h2\\test
+    url: jdbc:h2:file:~/.h2/test
+    username: sa
+    password:
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  h2:
+    console:  # H2 Web Console (H2ConsoleProperties)
+      enabled: true     # Enable the console
+      path: /h2         # Path at which the console will be available
+      settings:
+        trace: false    # Disnable trace output
+        web-allow-others: false   # Disable remote access
+
+
+# eureka.instance.preferIpAddress、eureka.instance.instance-id配合使用，当服务注册到服务中心时，显示IP地址，而不是主机名
+eureka:
+  instance:
+    leaseRenewalIntervalInSeconds: 10
+    leaseExpirationDurationInSeconds: 30
+    preferIpAddress: true
+    instance-id: ${spring.cloud.client.ipAddress}:${spring.application.name}:${spring.application.instance_id:${server.port}}
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
