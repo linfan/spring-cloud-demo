@@ -23,3 +23,8 @@ endpoints:
   heapdump:
     enabled: true
     sensitive: false
+
+# Enable all endpoints
+#management:
+#  security:
+#   enabled: false
