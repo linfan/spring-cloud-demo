@@ -25,3 +25,7 @@ feign:
 spring:
   zipkin:
     base-url: http://localhost:9966
+  sleuth:
+    enabled: true
+    sampler:
+      percentage: 1
