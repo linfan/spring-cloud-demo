@@ -1,0 +1,31 @@
+server:
+  port: 8080
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+# 设置默认超时时间60s（default为全局；若设置某项服务的超时时间，只需要将default替换为对应的服务名）
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 60000
+
+logging:
+  level:
+    ROOT: INFO
+    org.springframework.web: INFO
+
+zuul:
+  routes:
+    eureka-client:
+      serviceId: eureka-client
+      path: /api/**
+      stripPrefix: true
+    ribbon-demo:
+      path: /**
+      url: http://localhost:8181/
