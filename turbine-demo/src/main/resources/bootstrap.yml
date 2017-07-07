@@ -1,6 +1,6 @@
 spring:
   application:
-    name: turbine
+    name: turbine-demo
 server:
   port: 9090
 
