@@ -1,3 +1,7 @@
+spring:
+  application:
+    name: config-client
+
 # Enable endpoints should be put in local application.yml
 endpoints:
   env:

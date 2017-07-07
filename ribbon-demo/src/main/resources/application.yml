@@ -1,6 +1,16 @@
 server:
   port: 8181
 
+spring:
+  application:
+    name: ribbon-demo
+  zipkin:
+    base-url: http://localhost:9966
+  sleuth:
+    enabled: true
+    sampler:
+      percentage: 1
+
 eureka:
   instance:
     leaseRenewalIntervalInSeconds: 10
@@ -26,12 +36,3 @@ endpoints:
   heapdump:
     enabled: true
     sensitive: false
-
-# Zipkin
-spring:
-  zipkin:
-    base-url: http://localhost:9966
-  sleuth:
-    enabled: true
-    sampler:
-      percentage: 1

@@ -1,4 +1,5 @@
-# api-gateway
+# zuul-demo
+
 本模块演示api gateway，通过Zuul实现。  
 
 |url|desc|  

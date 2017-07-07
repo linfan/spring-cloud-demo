@@ -1,3 +1,10 @@
+server:
+  port: 9966
+
+spring:
+  application:
+    name: zipkin-demo
+
 eureka:
   instance:
     leaseRenewalIntervalInSeconds: 10

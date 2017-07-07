@@ -1,4 +1,9 @@
+server:
+  port: 8083
+
 spring:
+  application:
+    name: db-rest-demo
   data:
     rest:
       basePath: /api

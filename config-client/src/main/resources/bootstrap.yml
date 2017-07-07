@@ -1,6 +1,4 @@
 spring:
-  application:
-    name: config-client
   cloud:
     config:
       uri: ${config.server.uri:http://localhost:8888}

@@ -19,7 +19,7 @@ _项目基于Spring Boot `1.5.4.RELEASE`和Spring Cloud `Dalston.RELEASE`版本�
 |[admin-server](admin-server/README.md)|演示SpringBoot应用监控|
 |[turbine-demo](turbine-demo/README.md)|演示断路器汇聚监控|
 |[zipkin-demo](zipkin-demo/README.md)|演示服务调用链追踪|
-|[api-gateway](api-gateway/README.md)|演示Zuul服务网关|
+|[zuul-demo](zuul-demo/README.md)|演示Zuul服务网关|
 |[db-rest-demo](rest-demo/README.md)|演示Spring Data REST自动创建数据接口|
 
 演示目录：
@@ -33,4 +33,4 @@ _项目基于Spring Boot `1.5.4.RELEASE`和Spring Cloud `Dalston.RELEASE`版本�
 - 4. 服务监控，通过性能面板和调用链追踪优化服务 <br>
 需要服务`eureka-server`/`eureka-client`/`ribbon-demo`/`feign-demo`/`admin-demo`/`turbine-demo`/`zipkin-demo`
 - 5. 服务网关，通过服务网关控制访问流量 <br>
-需要服务`eureka-server`/`eureka-client`/`ribbon-demo`/`api-gateway`
+需要服务`eureka-server`/`eureka-client`/`ribbon-demo`/`zuul-demo`

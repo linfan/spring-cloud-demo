@@ -1,3 +1,10 @@
+server:
+  port: 9090
+
+spring:
+  application:
+    name: turbine-demo
+
 eureka:
   instance:
     leaseRenewalIntervalInSeconds: 10
