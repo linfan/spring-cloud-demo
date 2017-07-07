@@ -1,4 +1,4 @@
-package com.demo.sleuth;
+package com.demo.zipkin;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

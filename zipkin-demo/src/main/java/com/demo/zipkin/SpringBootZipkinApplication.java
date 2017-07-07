@@ -1,4 +1,4 @@
-package com.demo.sleuth;
+package com.demo.zipkin;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -8,9 +8,9 @@ import zipkin.server.EnableZipkinServer;
 @EnableDiscoveryClient
 @EnableZipkinServer
 @SpringBootApplication
-public class SpringBootSleuthZipkinApplication {
+public class SpringBootZipkinApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SpringBootSleuthZipkinApplication.class, args);
+		SpringApplication.run(SpringBootZipkinApplication.class, args);
 	}
 }

@@ -19,7 +19,7 @@
 		<module>feign-demo</module>
         <module>admin-demo</module>
         <module>turbine-demo</module>
-        <module>sleuth-demo</module>
+        <module>zipkin-demo</module>
 		<module>api-gateway</module>
         <module>rest-demo</module>
 	</modules>

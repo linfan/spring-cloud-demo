@@ -29,6 +29,6 @@ _项目基于Spring Boot `1.5.4.RELEASE`和Spring Cloud `Dalston.RELEASE`版本�
 - 3. 故障熔断，通过故障熔断阻止故障雪崩 <br>
 需要服务`eureka-server`/`eureka-client`/`feign-demo`
 - 4. 服务监控，通过性能面板和调用链追踪优化服务 <br>
-需要服务`eureka-server`/`eureka-client`/`ribbon-demo`/`feign-demo`/`admin-demo`/`turbine-demo`/`sleuth-demo`
+需要服务`eureka-server`/`eureka-client`/`ribbon-demo`/`feign-demo`/`admin-demo`/`turbine-demo`/`zipkin-demo`
 - 5. 服务网关，通过服务网关控制访问流量 <br>
 需要服务`eureka-server`/`eureka-client`/`api-gateway`

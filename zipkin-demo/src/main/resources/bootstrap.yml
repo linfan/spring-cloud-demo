@@ -1,5 +1,5 @@
 spring:
   application:
-    name: sleuth
+    name: zipkin
 server:
   port: 9966
