@@ -42,4 +42,4 @@ spring:
       percentage: 1
 
 demo:
-  env: local-0
+  env: dev-0

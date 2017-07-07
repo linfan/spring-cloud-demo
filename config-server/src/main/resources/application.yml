@@ -12,10 +12,6 @@ spring:
     host: localhost
     port: 5672
 
-management:
-  security:
-    enabled: false
-
 # Enable mappings endpoints
 endpoints:
   mappings:

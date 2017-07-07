@@ -2,4 +2,4 @@ server:
   port: 8081
 
 demo:
-  env: local-1
+  env: dev-1

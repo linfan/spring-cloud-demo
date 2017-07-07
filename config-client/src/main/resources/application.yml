@@ -3,3 +3,9 @@ endpoints:
   env:
     enabled: true
     sensitive: false
+  refresh:
+    enabled: true
+    sensitive: false
+  bus:
+    enabled: true
+    sensitive: false

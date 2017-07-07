@@ -52,3 +52,10 @@ private String env;
 直接调用`/refresh`刷新单个服务配置??
 
 调用`/bus/refresh`刷新所有配置
+
+# 运行两个实例
+
+```bash
+mvn spring-boot:run -Dserver.port=8085
+mvn spring-boot:run -Dserver.port=8086
+```
