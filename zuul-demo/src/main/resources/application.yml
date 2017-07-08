@@ -19,3 +19,11 @@ zuul:
     ribbon-demo:
       path: /ribbon/**
       url: http://localhost:8181/
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 6000

@@ -1,14 +1,14 @@
-# zuul-demo
+# Zuul Demo
 
-本模块演示api gateway，通过Zuul实现。  
+微服务网关
 
-|url|desc|  
-|:---|:---|   
-|http://localhost:8080/api/swagger/api/hello|访问eureka-client服务的hello方法|  
-|http://localhost:8080/rest/api/user|获取db-rest服务的User列表|  
-|...|...|
+|method|url|desc|  
+|:---|:---|:---|   
+|GET|http://localhost:8080/eureka/api/info|访问eureka-client服务的info方法|
+|GET|http://localhost:8080/ribbon/backend|获取ribbon-demo服务的backend方法|
 
-## 启用Zuul  
+## 练习五：服务网关
+
 * 引入Maven依赖  
 
 ``` maven
@@ -23,19 +23,19 @@
 _serviceId指定服务名_  
 _url指定服务地址_
 
-``` properties
-zuul.routes.eureka-client.path = /swagger/**
-zuul.routes.eureka-client.serviceId = eureka-client
-# stripPrefix：是否去除前缀，默认为true
-# stripPrefix=true, http://localhost:8080/api/swagger/api/hello ==> http://localhost:8081/api/hello
-# stripPrefix=false, http://localhost:8080/api/swagger/api/hello ==> http://localhost:8081/api/swagger/api/hello
-zuul.routes.eureka-client.stripPrefix = true
-
-zuul.routes.rest-demo.path = /rest/**
-zuul.routes.rest-demo.url = http://localhost:8082/
+``` yaml
+zuul:
+  routes:
+    eureka-client:
+      serviceId: eureka-client
+      path: /eureka/**
+      stripPrefix: true
+    ribbon-demo:
+      path: /ribbon/**
+      url: http://localhost:8181/
 ```
 
-_最好还设置下Hystrix的全局超时时间，如下，设置默认超时时间为60s_  
+_Zuul默认自带断路功能，最好设置Hystrix的全局超时时间，例如设置默认超时时间为6s_  
 
 ``` yml
 hystrix:
@@ -44,19 +44,13 @@ hystrix:
       execution:
         isolation:
           thread:
-            timeoutInMilliseconds: 60000
+            timeoutInMilliseconds: 6000
 ```
 
-* 启用Zuul  
+* 启用Zuul
 
 _增加@EnableZuulProxy注解，启用Zuul_
 
 ``` java
 @EnableZuulProxy
-@SpringBootApplication
-public class ZuulApiGatewayApplication {
-	public static void main(String[] args) {
-		SpringApplication.run(ZuulApiGatewayApplication.class, args);
-	}
-}
 ```
