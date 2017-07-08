@@ -10,20 +10,3 @@ eureka:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
 
-zuul:
-  routes:
-    eureka-client:
-      serviceId: eureka-client
-      path: /eureka/**
-      stripPrefix: true
-    ribbon-demo:
-      path: /ribbon/**
-      url: http://localhost:8181/
-
-hystrix:
-  command:
-    default:
-      execution:
-        isolation:
-          thread:
-            timeoutInMilliseconds: 6000
