@@ -25,7 +25,7 @@ _项目基于Spring Boot `1.5.4.RELEASE`和Spring Cloud `Dalston.RELEASE`版本�
 演示目录：
 
 - 1. 服务发现，通过服务发现进行服务调用负载均衡 <br>
-需要服务`eureka-server`/`eureka-client`x2/`ribbon-demo`
+需要服务`eureka-server`/`eureka-client`x2/`ribbon-demo`/`feign-demo`
 - 2. 配置中心，通过配置中心进行配置热刷新 <br>
 需要服务`eureka-server`/`config-server`/`config-client`x2
 - 3. 故障熔断，通过故障熔断阻止故障雪崩 <br>

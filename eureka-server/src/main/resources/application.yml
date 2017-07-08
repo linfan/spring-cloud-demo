@@ -5,3 +5,9 @@ spring:
   application:
     name: eureka-server
 
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    registerWithEureka: false  # 不注册自己到Eureka服务中心
+    fetchRegistry: false       # 从Eureka服务中心获取注册信息

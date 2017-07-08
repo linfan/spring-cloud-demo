@@ -11,7 +11,11 @@
 	<artifactId>eureka-server</artifactId>
 
 	<dependencies>
-
+		<!-- eureka server -->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-eureka-server</artifactId>
+		</dependency>
 	</dependencies>
 
 </project>

@@ -1,84 +1,53 @@
-# admin-demo  
-本模块简单演示了[Spring Boot Admin](http://codecentric.github.io/spring-boot-admin/1.5.0)。  
-本模块已将admin server注册为eureka客户端，所以不需要再增加admin client。  
-Spinrg Boot Admin可用于管理和监控基于Spring Boot的应用。
+# Admin Demo 
 
-|url|desc|  
-|:---|:---|   
-|http://localhost:8090|spring boot admin ui|   
+SpringBoot应用监控，管理和监控基于Spring Boot的应用
 
-## 启用Spring Boot Admin  
+|method|url|desc|
+|:---|:---|:---|
+|GET|http://localhost:8090|spring boot admin ui|
+
+## 练习四：服务监控
+
 * 引入Maven依赖  
 
 ``` maven
-<properties>
-    <spring.boot.admin.server>1.5.0</spring.boot.admin.server>
-    ...
-</properties>
-
-<!-- spring-boot-admin -->
 <dependency>
     <groupId>de.codecentric</groupId>
     <artifactId>spring-boot-admin-server</artifactId>
-    <version>${spring.boot.admin.server}</version>
+    <version>1.5.2</version>
 </dependency>
 <dependency>
     <groupId>de.codecentric</groupId>
     <artifactId>spring-boot-admin-server-ui</artifactId>
-    <version>${spring.boot.admin.server}</version>
-</dependency>
-
-<!-- eureka 客户端 -->
-<dependency>
-    <groupId>org.springframework.cloud</groupId>
-    <artifactId>spring-cloud-starter-eureka</artifactId>
+    <version>1.5.2</version>
 </dependency>
 ```
 
-* 配置应用\端口等  
+* 配置允许访问监控端点
 
-_以下是bootstrap.yml中相关配置_  
-
-``` yml
-spring:
-  application:
-    name: admin 
-server:
-  port: 8090
-
-eureka:
-  instance:
-    leaseRenewalIntervalInSeconds: 10
-    leaseExpirationDurationInSeconds: 30
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
+``` yaml
+endpoints:
+  metrics:
+    enabled: true
+    sensitive: false
+  dump:
+    enabled: true
+    sensitive: false
+  env:
+    enabled: true
+    sensitive: false
+  trace:
+    enabled: true
+    sensitive: false
+  heapdump:
+    enabled: true
+    sensitive: false
 ```
-
 
 * 启用AdminServer  
 
 _增加@EnableAdminServer，启用Spring Boot Admin_  
-_增加@EnableDiscoveryClient，启用服务注册与发现_  
 
 ``` java
-@EnableDiscoveryClient
 @EnableAdminServer
-@SpringBootApplication
-public class SpringBootAdminServerApplication {
-
-    public static void main(String[] args) {
-        SpringApplication.run(SpringBootAdminServerApplication.class, args);
-    }
-}
 ```
-
-## 运行截图  
-
-* Applications  
-
-![application](../_images/admin-server/application.jpg)   
-
-* Journal  
-
-![journal](../_images/admin-server/journal.jpg)   

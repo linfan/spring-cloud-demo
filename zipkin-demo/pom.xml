@@ -16,15 +16,6 @@
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-eureka</artifactId>
 		</dependency>
-		<dependency>
-			<groupId>io.zipkin.java</groupId>
-			<artifactId>zipkin-server</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>io.zipkin.java</groupId>
-			<artifactId>zipkin-autoconfigure-ui</artifactId>
-			<scope>runtime</scope>
-		</dependency>
 	</dependencies>
 
 </project>
