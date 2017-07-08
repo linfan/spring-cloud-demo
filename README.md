@@ -1,11 +1,13 @@
-## Spring Cloud Demo  
+# Spring Cloud Demo  
 
-Spring Cloud相关DEMO，包含服务发现/配置中心/故障熔断/服务监控/服务网关等场景。  
+Spring Cloud相关练习，包含服务发现/配置中心/故障熔断/服务监控/服务网关等场景。
 
 GitHub：<https://github.com/linfan/spring-cloud-demo.git> <br>
 Forked from：<https://github.com/luoml/spring-cloud-example.git>  
 
 _项目基于Spring Boot `1.5.4.RELEASE`和Spring Cloud `Dalston.RELEASE`版本，各模块简要说明如下：_
+
+## 服务清单
 
 |project|desc|
 |---|---|
@@ -22,7 +24,7 @@ _项目基于Spring Boot `1.5.4.RELEASE`和Spring Cloud `Dalston.RELEASE`版本�
 |[zuul-demo](zuul-demo/README.md)|演示Zuul服务网关|
 |[db-rest-demo](rest-demo/README.md)|演示Spring Data REST自动创建数据接口|
 
-服务练习：
+## 练习目录
 
 - 练习一：服务发现，通过服务发现进行服务调用负载均衡 <br>
 需要服务`eureka-server`/`eureka-client`x2/`ribbon-demo`/`feign-demo`
@@ -34,3 +36,8 @@ _项目基于Spring Boot `1.5.4.RELEASE`和Spring Cloud `Dalston.RELEASE`版本�
 需要服务`eureka-server`/`eureka-client`/`ribbon-demo`/`feign-demo`/`admin-demo`/`turbine-demo`/`zipkin-demo`
 - 练习五：服务网关，通过服务网关控制访问流量 <br>
 需要服务`eureka-server`/`eureka-client`/`ribbon-demo`/`zuul-demo`
+
+## 特别说明
+
+- `eureka-client`、`ribbon-demo`和`feign-demo`服务中已经引入了`Zipkin`的依赖，在练习一会出现`ResourceAccessException`，需要先移除相关代码
+- `config-server`和`config-client`中引入的Spring Cloud Bus包含对Rabbit的依赖，在练习二尚未使用动态刷新时，可先移除相关代码
