@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.Map;
 
 @RestController
-@RefreshScope
 @RequestMapping(value="/api/")
 public class DemoController {
 
@@ -24,7 +23,6 @@ public class DemoController {
 	@Value("${demo.config.item}")
 	private String item;
 
-    @ApiOperation(value="演示从环境上下文和配置文件读取信息")
     @RequestMapping(value = "/info", method = RequestMethod.GET)
     public Map<String, String> hello() {
         InstanceInfo instanceInfo = registration.getApplicationInfoManager().getInfo();

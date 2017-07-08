@@ -4,12 +4,6 @@ server:
 spring:
   application:
     name: ribbon-demo
-  zipkin:
-    base-url: http://localhost:9966
-  sleuth:
-    enabled: true
-    sampler:
-      percentage: 1
 
 eureka:
   instance:
@@ -19,20 +13,3 @@ eureka:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
 
-# Enable admin endpoints
-endpoints:
-  metrics:
-    enabled: true
-    sensitive: false
-  dump:
-    enabled: true
-    sensitive: false
-  env:
-    enabled: true
-    sensitive: false
-  trace:
-    enabled: true
-    sensitive: false
-  heapdump:
-    enabled: true
-    sensitive: false

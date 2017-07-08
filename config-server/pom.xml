@@ -11,17 +11,7 @@
 	<artifactId>config-server</artifactId>
 
 	<dependencies>
-		<!-- Config Server -->
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-config-server</artifactId>
-		</dependency>
 
-		<!-- Bus refresh -->
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-bus-amqp</artifactId>
-		</dependency>
 	</dependencies>
 
 </project>

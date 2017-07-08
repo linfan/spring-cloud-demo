@@ -14,14 +14,14 @@
 		<module>eureka-server</module>
 		<module>eureka-client</module>
 		<module>ribbon-demo</module>
+		<module>feign-demo</module>
 		<module>config-server</module>
         <module>config-client</module>
-		<module>feign-demo</module>
-        <module>admin-demo</module>
-        <module>turbine-demo</module>
-        <module>zipkin-demo</module>
-		<module>zuul-demo</module>
-        <module>db-rest-demo</module>
+        <!--<module>admin-demo</module>-->
+        <!--<module>turbine-demo</module>-->
+        <!--<module>zipkin-demo</module>-->
+		<!--<module>zuul-demo</module>-->
+        <!--<module>db-rest-demo</module>-->
 	</modules>
 
 	<properties>

@@ -1,61 +1,97 @@
-# config-client
+# Config Client
 
-演示Config Client
+配置中心客户端，动态更新配置
 
-|url|desc|  
-|:---|:---|   
-|http://localhost:8085/swagger-ui.html|Eureka客户端接口列表|  
-|http://localhost:8085/env|观察配置的加载位置和顺序|   
+|method|url|desc|  
+|:---|:---|:---|   
+|GET|http://localhost:8085/swagger-ui.html|Eureka客户端接口列表|  
+|GET|http://localhost:8085/env|观察配置的加载位置和顺序|   
+|GET|http://localhost:8085/refresh|刷新单个服务配置|
+|GET|http://localhost:8085/bus/refresh|通过MQ刷新所有服务配置|
+|GET|http://localhost:8085/info|从环境上下文和配置文件读取信息|
 
-## 配置Config Client
-* 引入Maven依赖  
+## 练习二：配置中心和动态配置刷新
+
+### 使用配置中心
+
+* 引入Maven依赖
 
 ``` maven
-<!-- spring cloud config　客户端 -->
+<!-- spring cloud config client -->
 <dependency>
-	<groupId>org.springframework.cloud</groupId>
-	<artifactId>spring-cloud-starter-config</artifactId>
+    <groupId>org.springframework.cloud</groupId>
+    <artifactId>spring-cloud-starter-config</artifactId>
 </dependency>
 ```
 
-* 配置ConfigServer地址  
+* 配置ConfigServer地址
 
-_spring.application.name指定该工程的服务名_  
-_spring.profiles.active读取指定环境的配置文件（如：application-dev.properties、eureka-client-dev.properties）_  
-_spring.cloud.config.uri指定ConfigServer的地址_  
-_server.port指定端口_  
-
-``` yml
+``` yaml
 spring:
-  application:
-    name: eureka-client
-  profiles:
-    active: dev
   cloud:
     config:
-      uri: ${config.server.uri:http://localhost:8888} 
-
-server:
-  port: 8081
+      uri: http://localhost:8888
 ```
 
-* 获取远程服务器文件属性值  
+* 允许查看配置加载的路由
 
-_通过@Value("${属性名}")获取属性值，见DemoController类hello()_  
-
-``` java
-@Value("${demo.env}")
-private String env;
+``` yaml
+endpoints:
+  env:
+    enabled: true
+    sensitive: false
 ```
 
+### 单服务配置动态更新
 
-直接调用`/refresh`刷新单个服务配置??
-
-调用`/bus/refresh`刷新所有配置
-
-# 运行两个实例
+* 运行两个实例
 
 ```bash
 mvn spring-boot:run -Dserver.port=8085
 mvn spring-boot:run -Dserver.port=8086
+```
+
+* 允许配置刷新
+
+``` java
+@RefreshScope
+```
+
+* 配置允许刷新配置的路由
+
+``` yaml
+endpoints:
+  refresh:
+    enabled: true
+    sensitive: false
+```
+
+### 配置同步动态更新
+
+* 引入Bus依赖
+
+``` maven
+<!-- Bus refresh -->
+<dependency>
+    <groupId>org.springframework.cloud</groupId>
+    <artifactId>spring-cloud-starter-bus-amqp</artifactId>
+</dependency>
+```
+
+* 配置MQ地址
+
+``` yaml
+spring:
+  rabbitmq:
+    host: localhost
+    port: 5672
+```
+
+* 配置允许通过MQ刷新配置的路由
+
+``` yaml
+endpoints:
+  bus:
+    enabled: true
+    sensitive: false
 ```

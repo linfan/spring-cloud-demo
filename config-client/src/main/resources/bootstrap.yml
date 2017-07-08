@@ -1,6 +1,3 @@
 spring:
-  cloud:
-    config:
-      uri: ${config.server.uri:http://localhost:8888}
   profiles:
-    active: dev   # Default profile should be set in local bootstrap.yml
+    active: dev

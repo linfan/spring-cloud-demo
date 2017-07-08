@@ -1,15 +1,3 @@
 spring:
   application:
     name: config-client
-
-# Enable endpoints should be put in local application.yml
-endpoints:
-  env:
-    enabled: true
-    sensitive: false
-  refresh:
-    enabled: true
-    sensitive: false
-  bus:
-    enabled: true
-    sensitive: false

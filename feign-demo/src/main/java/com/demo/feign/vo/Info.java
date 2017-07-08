@@ -1,16 +1,9 @@
 package com.demo.feign.vo;
 
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-
-@ApiModel("服务运行信息")
 public class Info {
 
-    @ApiModelProperty("服务名称")
 	private String name;
-    @ApiModelProperty("服务运行环境")
     private String env;
-    @ApiModelProperty("服务运行地址")
     private String address;
 
     public Info() {

@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-@FeignClient(value = "eureka-client", fallback = DemoServiceFeignClientFallback.class)
 public interface DemoServiceFeignClient {
 
     @RequestMapping(value = "/api/hello/{name}", method = RequestMethod.GET)

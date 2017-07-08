@@ -4,18 +4,3 @@ server:
 spring:
   application:
     name: config-server
-  cloud:
-    config:
-      server:
-        git:
-          uri: https://github.com/linfan/spring-cloud-demo.git  # or /local/path/to/spring-cloud-demo/.git
-          searchPaths: config-repo
-  rabbitmq:
-    host: localhost
-    port: 5672
-
-# Enable mappings endpoints
-endpoints:
-  mappings:
-    enabled: true
-    sensitive: false
