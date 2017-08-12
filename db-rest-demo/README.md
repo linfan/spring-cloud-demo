@@ -8,8 +8,8 @@
 
 |url|desc|  
 |:---|:---|   
-|http://localhost:8082/h2|访问h2控制台|  
-|http://localhost:8082/api|返回接口清单|  
+|http://localhost:8083/h2|访问h2控制台|  
+|http://localhost:8083/api|返回接口清单|  
 
 ## 配置H2数据库
 

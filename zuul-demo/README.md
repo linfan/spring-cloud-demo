@@ -4,8 +4,8 @@
 
 |method|url|desc|  
 |:---|:---|:---|   
-|GET|http://localhost:8080/eureka/api/info|访问eureka-client服务的info方法|
-|GET|http://localhost:8080/ribbon/backend|获取ribbon-demo服务的backend方法|
+|GET|http://localhost:5555/eureka/api/info|访问eureka-client服务的info方法|
+|GET|http://localhost:5555/ribbon/backend|获取ribbon-demo服务的backend方法|
 
 ## 练习五：服务网关
 
