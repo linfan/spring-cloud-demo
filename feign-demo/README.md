@@ -4,9 +4,9 @@ Feign封装的Restful调用
 
 |method|url|desc|  
 |:---|:---|:---|  
-|GET|http://localhost:8081/swagger-ui.html|Ribbon客户端接口列表|
-|GET|http://localhost:8081/call|使用Ribbon访问EurekaClient服务|
-|GET|http://localhost:8081/backend|显示访问的EurekaClient服务信息|
+|GET|http://localhost:8182/swagger-ui.html|Ribbon客户端接口列表|
+|GET|http://localhost:8182/call|使用Ribbon访问EurekaClient服务|
+|GET|http://localhost:8182/backend|显示访问的EurekaClient服务信息|
 
 ## 练习一：服务发现和负载均衡
 

@@ -4,10 +4,10 @@ Eureka的客户端，提供Restful服务
 
 |method|url|desc|
 |:---|:---|:---|
-|GET|http://localhost:8081/swagger-ui.html|Eureka客户端接口列表|
-|GET|http://localhost:8081/api/hello/{name}|演示处理GET请求|
-|POST|http://localhost:8081/api/{greeting}|演示处理POST请求|
-|GET|http://localhost:8081/api/info}|演示从环境上下文和配置文件读取信息|
+|GET|http://localhost:8080/swagger-ui.html|Eureka客户端接口列表|
+|GET|http://localhost:8080/api/hello/{name}|演示处理GET请求|
+|POST|http://localhost:8080/api/{greeting}|演示处理POST请求|
+|GET|http://localhost:8080/api/info}|演示从环境上下文和配置文件读取信息|
 
 ## 练习一：服务发现和负载均衡
 

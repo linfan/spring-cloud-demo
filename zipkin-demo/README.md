@@ -2,6 +2,10 @@
 
 服务调用链追踪
 
+|url|desc|  
+|:---|:---|    
+|http://localhost:9966/|Zipkin Dashboard|
+
 ## 练习四：服务监控
 
 * 引入Maven依赖  
