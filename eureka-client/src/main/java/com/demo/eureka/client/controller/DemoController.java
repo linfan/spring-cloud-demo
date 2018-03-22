@@ -2,6 +2,7 @@ package com.demo.eureka.client.controller;
 
 import com.demo.eureka.client.vo.Info;
 import com.demo.eureka.client.vo.User;
+import com.demo.sleuth.plugin.SessionInfoOperator;
 import com.netflix.appinfo.InstanceInfo;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
@@ -10,6 +11,8 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.netflix.eureka.serviceregistry.EurekaRegistration;
 import org.springframework.web.bind.annotation.*;
 import springfox.documentation.annotations.ApiIgnore;
+
+import javax.annotation.Resource;
 
 /**
  * ApiOperation和ApiParam可理解为API说明
@@ -20,8 +23,10 @@ public class DemoController {
 
 	@Autowired
     private EurekaRegistration registration;
-	
-	@Value("${demo.env}")
+    @Resource
+    private SessionInfoOperator sessionInfoOperator;
+
+    @Value("${demo.env}")
 	private String env;
 
 	@ApiOperation(value="演示处理GET请求")
@@ -44,6 +49,13 @@ public class DemoController {
         InstanceInfo instanceInfo = registration.getApplicationInfoManager().getInfo();
         return new Info(registration.getServiceId(), env,
                 instanceInfo.getHostName() + ":" + instanceInfo.getPort());
+    }
+
+    @ApiOperation(value="演示获得Sleuth透传的额外Trace信息")
+    @RequestMapping(value = "/trace", method = RequestMethod.GET)
+    public String trace() {
+        String data = sessionInfoOperator.getSessionInfo("user_id");
+        return data == null ? "Trace Not Found" : data;
     }
 
 	/**

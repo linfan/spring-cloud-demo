@@ -4,12 +4,16 @@ import com.demo.feign.service.demo.DemoServiceFeignClient;
 import com.demo.feign.service.ribbon.RibbonServiceFeignClient;
 import com.demo.feign.vo.Info;
 import com.demo.feign.vo.User;
+import com.demo.sleuth.plugin.SessionInfoOperator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.annotation.Resource;
+
 @RestController
+@RequestMapping(value="/api")
 public class DemoController {
 	
 	@Autowired
@@ -18,7 +22,10 @@ public class DemoController {
 	@Autowired
     private RibbonServiceFeignClient ribbonServiceFeignClient;
 
-	@RequestMapping(value = "/call", method = RequestMethod.GET)
+    @Resource
+    private SessionInfoOperator sessionInfoOperator;
+
+    @RequestMapping(value = "/call", method = RequestMethod.GET)
 	public String call() {
 	    User mike = demoServiceFeignClient.greeting("hey", new User("hi", "mike"));
 	    User lucy = demoServiceFeignClient.hello("Lucy");
@@ -41,4 +48,11 @@ public class DemoController {
     public String ribbonBackend() {
         return "Ribbon tells: " + ribbonServiceFeignClient.backend();
     }
+
+    @RequestMapping(value = "/ribbon/trace", method = RequestMethod.GET)
+    public String ribbonTrace() {
+        sessionInfoOperator.setSessionInfo("user_id", "#3721");
+        return "Ribbon tells: " + ribbonServiceFeignClient.trace();
+    }
+
 }

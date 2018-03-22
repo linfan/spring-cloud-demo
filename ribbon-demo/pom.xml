@@ -38,6 +38,12 @@
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-sleuth-zipkin</artifactId>
 		</dependency>
+
+		<!-- sleuth plugin -->
+		<dependency>
+			<groupId>com.demo.springcloud</groupId>
+			<artifactId>sleuth-plugin</artifactId>
+		</dependency>
 	</dependencies>
 
 </project>

@@ -7,10 +7,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @FeignClient(value = "ribbon-demo", fallback = RibbonServiceFeignClientFallback.class)
 public interface RibbonServiceFeignClient {
 
-    @RequestMapping(value = "/call", method = RequestMethod.GET)
+    @RequestMapping(value = "/api/call", method = RequestMethod.GET)
     public String call();
 
-    @RequestMapping(value = "/backend", method = RequestMethod.GET)
+    @RequestMapping(value = "/api/backend", method = RequestMethod.GET)
     public String backend();
+
+    @RequestMapping(value = "/api/trace", method = RequestMethod.GET)
+    public String trace();
 
 }

@@ -42,4 +42,7 @@ public class DemoRibbonRestClient {
         return new Info("none", "default", "no where");
     }
 
+    public String getTrace() {
+        return restTemplate.getForEntity("http://eureka-client/api/trace/", String.class).getBody();
+    }
 }

@@ -14,4 +14,9 @@ public class RibbonServiceFeignClientFallback implements RibbonServiceFeignClien
 	public String backend() {
 		return "i'm not there";
 	}
+
+	@Override
+	public String trace() {
+		return "fail to find trace";
+	}
 }
