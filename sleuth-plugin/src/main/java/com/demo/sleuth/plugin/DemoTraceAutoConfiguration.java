@@ -10,6 +10,9 @@ import org.springframework.context.annotation.Configuration;
 @ConditionalOnProperty(value = "demo.sleuth.config.enabled", matchIfMissing = true)
 public class DemoTraceAutoConfiguration {
 
+    /**
+     * 这个列表中的HTTP Header会自动添加到Trace进行透传
+     */
     @Value("${demo.sleuth.config.headers:lang_info}")
     private String[] headers;
 

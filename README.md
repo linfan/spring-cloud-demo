@@ -23,6 +23,7 @@ _项目基于Spring Boot `1.5.4.RELEASE`和Spring Cloud `Dalston.RELEASE`版本�
 |[zipkin-demo](zipkin-demo/README.md)|演示服务调用链追踪|
 |[zuul-demo](zuul-demo/README.md)|演示Zuul服务网关|
 |[db-rest-demo](rest-demo/README.md)|演示Spring Data REST自动创建数据接口|
+|[sleuth-plugin](sleuth-plugin/README.md)|演示基于slueth的参数透传插件|
 
 ## 练习目录
 

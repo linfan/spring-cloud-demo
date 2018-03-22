@@ -6,9 +6,12 @@ import com.demo.sleuth.plugin.SessionInfoOperator;
 import com.netflix.appinfo.InstanceInfo;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.netflix.eureka.serviceregistry.EurekaRegistration;
+import org.springframework.http.HttpHeaders;
 import org.springframework.web.bind.annotation.*;
 import springfox.documentation.annotations.ApiIgnore;
 
@@ -20,6 +23,8 @@ import javax.annotation.Resource;
 @RestController
 @RequestMapping(value="/api")
 public class DemoController {
+
+    private Logger logger = LoggerFactory.getLogger(DemoController.class);
 
 	@Autowired
     private EurekaRegistration registration;
@@ -53,9 +58,11 @@ public class DemoController {
 
     @ApiOperation(value="演示获得Sleuth透传的额外Trace信息")
     @RequestMapping(value = "/trace", method = RequestMethod.GET)
-    public String trace() {
+    public String trace(@RequestHeader HttpHeaders headers) {
         String data = sessionInfoOperator.getSessionInfo("user_id");
-        return data == null ? "Trace Not Found" : data;
+        logger.info(">> New trace request");
+        headers.toSingleValueMap().forEach((k, v) -> logger.info(">>>> " + k + ": " + v));
+        return data == null ? "Trace not found" : data;
     }
 
 	/**
