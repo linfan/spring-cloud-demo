@@ -39,10 +39,10 @@
 			<artifactId>spring-cloud-sleuth-zipkin</artifactId>
 		</dependency>
 
-		<!-- sleuth plugin -->
+		<!-- transmission plugin -->
 		<dependency>
 			<groupId>com.demo.springcloud</groupId>
-			<artifactId>sleuth-plugin</artifactId>
+			<artifactId>transmission-plugin</artifactId>
 		</dependency>
 	</dependencies>
 

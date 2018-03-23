@@ -1,5 +1,6 @@
 package com.demo.feign.service.ribbon;
 
+import feign.Param;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -16,7 +17,7 @@ public class RibbonServiceFeignClientFallback implements RibbonServiceFeignClien
 	}
 
 	@Override
-	public String trace() {
+	public String trace(@Param("id") String id) {
 		return "fail to find trace";
 	}
 }

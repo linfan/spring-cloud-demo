@@ -1,6 +1,7 @@
 package com.demo.feign.service.ribbon;
 
 import org.springframework.cloud.netflix.feign.FeignClient;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -14,6 +15,6 @@ public interface RibbonServiceFeignClient {
     public String backend();
 
     @RequestMapping(value = "/api/trace", method = RequestMethod.GET)
-    public String trace();
+    public String trace(@RequestHeader("X-User-Id") String id);
 
 }

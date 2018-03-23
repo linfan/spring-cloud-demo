@@ -4,13 +4,11 @@ import com.demo.feign.service.demo.DemoServiceFeignClient;
 import com.demo.feign.service.ribbon.RibbonServiceFeignClient;
 import com.demo.feign.vo.Info;
 import com.demo.feign.vo.User;
-import com.demo.sleuth.plugin.SessionInfoOperator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
-import javax.annotation.Resource;
 
 @RestController
 @RequestMapping(value="/api")
@@ -21,9 +19,6 @@ public class DemoController {
 
 	@Autowired
     private RibbonServiceFeignClient ribbonServiceFeignClient;
-
-    @Resource
-    private SessionInfoOperator sessionInfoOperator;
 
     @RequestMapping(value = "/call", method = RequestMethod.GET)
 	public String call() {
@@ -50,9 +45,8 @@ public class DemoController {
     }
 
     @RequestMapping(value = "/ribbon/trace", method = RequestMethod.GET)
-    public String ribbonTrace() {
-        sessionInfoOperator.setSessionInfo("user_id", "#3721");
-        return "Ribbon tells: " + ribbonServiceFeignClient.trace();
+    public String ribbonTrace(@RequestParam String id) {
+        return "Ribbon tells: " + ribbonServiceFeignClient.trace(id);
     }
 
 }

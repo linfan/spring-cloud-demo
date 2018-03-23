@@ -2,7 +2,6 @@ package com.demo.eureka.client.controller;
 
 import com.demo.eureka.client.vo.Info;
 import com.demo.eureka.client.vo.User;
-import com.demo.sleuth.plugin.SessionInfoOperator;
 import com.netflix.appinfo.InstanceInfo;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
@@ -15,7 +14,7 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.web.bind.annotation.*;
 import springfox.documentation.annotations.ApiIgnore;
 
-import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * ApiOperation和ApiParam可理解为API说明
@@ -28,8 +27,6 @@ public class DemoController {
 
 	@Autowired
     private EurekaRegistration registration;
-    @Resource
-    private SessionInfoOperator sessionInfoOperator;
 
     @Value("${demo.env}")
 	private String env;
@@ -56,13 +53,11 @@ public class DemoController {
                 instanceInfo.getHostName() + ":" + instanceInfo.getPort());
     }
 
-    @ApiOperation(value="演示获得Sleuth透传的额外Trace信息")
+    @ApiOperation(value="演示HTTP透传Trace信息")
     @RequestMapping(value = "/trace", method = RequestMethod.GET)
     public String trace(@RequestHeader HttpHeaders headers) {
-        String data = sessionInfoOperator.getSessionInfo("user_id");
-        logger.info(">> New trace request");
-        headers.toSingleValueMap().forEach((k, v) -> logger.info(">>>> " + k + ": " + v));
-        return data == null ? "Trace not found" : data;
+        List<String> userId = headers.get("x-user-id");
+        return userId == null ? "Trace not found" : userId.get(0);
     }
 
 	/**
