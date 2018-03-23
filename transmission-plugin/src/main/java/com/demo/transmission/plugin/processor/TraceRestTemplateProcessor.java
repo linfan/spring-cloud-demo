@@ -24,7 +24,7 @@ public class TraceRestTemplateProcessor implements BeanPostProcessor {
 
     @Override
     public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
-        if (bean instanceof RestTemplate)  {
+        if (bean instanceof RestTemplate) {
             RestTemplate rt = (RestTemplate) bean;
             List<ClientHttpRequestInterceptor> interceptors = rt.getInterceptors();
             interceptors.add(new OutgoingInterceptor());

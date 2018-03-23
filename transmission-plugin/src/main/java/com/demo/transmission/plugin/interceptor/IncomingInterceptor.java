@@ -22,7 +22,7 @@ public class IncomingInterceptor implements HandlerInterceptor {
             String header = e.nextElement();
             logger.info(">>>> " + header + ": " + request.getHeader(header));
         }
-        UserId.set(request.getHeader("X-User-Id"));
+        ThreadLocalStoragedVar.set(request.getHeader("X-User-Id"));
         return true;
     }
 

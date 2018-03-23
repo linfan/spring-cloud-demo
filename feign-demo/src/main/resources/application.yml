@@ -22,6 +22,16 @@ eureka:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
 
+# Increase hystrix thread pool
+hystrix:
+  command:
+    default:
+      circuitBreaker:
+        requestVolumeThreshold: 100
+  threadpool:
+    default:
+      coreSize: 25
+      maxQueueSize: 500
 
 # Enable admin endpoints
 endpoints:

@@ -21,8 +21,8 @@ public class OutgoingInterceptor implements ClientHttpRequestInterceptor {
     public ClientHttpResponse intercept(HttpRequest request, byte[] body,
                                         ClientHttpRequestExecution execution) throws IOException {
         HttpHeaders headers = request.getHeaders();
-        headers.add("X-User-Id", UserId.get());
-        logger.info(">> Calling " + request.getURI().toString() + " with user-id: " + UserId.get());
+        headers.add("X-User-Id", ThreadLocalStoragedVar.get());
+        logger.info(">> Calling " + request.getURI().toString() + " with user-id: " + ThreadLocalStoragedVar.get());
         return execution.execute(request, body);
     }
 }
